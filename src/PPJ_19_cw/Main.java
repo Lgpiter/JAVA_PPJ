@@ -17,5 +17,8 @@ public class Main {
 
         Owoc mango = new Owoc("Mango");
         mango.wypisz();
+
+        Owoc kiwi = new Owoc("kiwi");
+        kiwi.wypisz();
     }
 }
