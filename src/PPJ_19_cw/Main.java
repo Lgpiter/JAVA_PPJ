@@ -20,5 +20,8 @@ public class Main {
 
         Owoc kiwi = new Owoc("kiwi");
         kiwi.wypisz();
+
+        Dzem jablkowy = new Dzem("jablkowy");
+        Sloik sloik_jalbkowy = new Sloik(jablkowy);
     }
 }
