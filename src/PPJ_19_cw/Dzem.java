@@ -1,5 +1,6 @@
 package PPJ_19_cw;
 
+
 public class Dzem {
     private String smak;
     private double waga;
