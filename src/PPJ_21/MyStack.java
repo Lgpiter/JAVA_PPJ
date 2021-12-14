@@ -1,7 +1,7 @@
 package PPJ_21;
 
 public class MyStack {
-    private Node head = null;
+    private Node head;
 
     public MyStack(){
         head = null;
