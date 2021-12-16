@@ -21,4 +21,9 @@ public class NodeString {
     NodeString getNextString(){
         return next;
     }
+
+    public void setnext(NodeString element){
+        next = element;
+    }
+
 }

@@ -13,6 +13,31 @@ public class Main {
         poolA.pushString("Villarreal");
         poolA.pushString("RB Salzburg");
         poolA.pushString("Chelsea");
+        //Dodanie wszystkich zespolow do koszyka B
+        poolB.pushString("Manchaster City");
+        poolB.pushString("Liverpool");
+        poolB.pushString("Ajax Amsterdam");
+        poolB.pushString("Real Madryt");
+        poolB.pushString("Bayern Monachium");
+        poolB.pushString("Machaster United");
+        poolB.pushString("Lille");
+        poolB.pushString("Juventus");
+
+        MyQueue queue = new MyQueue();
+        while(!poolA.empty()){
+            queue.put(poolA.popString());
+            queue.put(poolB.popString());
+        }
+        int counter = 1;
+        while(!queue.empty()){
+            System.out.println("Match number " + counter);
+            System.out.print(queue.get() + " vs ");
+            System.out.print(queue.get());
+            System.out.println();
+            counter++;
+        }
+
+
 
 
     }

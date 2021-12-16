@@ -17,7 +17,6 @@ public class MyStackString {
         return d;
     }
 
-    public boolean empty(){
-        return head == null;
+    public boolean empty(){return head == null;
     }
 }
