@@ -6,8 +6,7 @@ public class Osoba {
     public Osoba(String imie){this.imie = imie;}
 
     public String wyswietl(){
-        System.out.print("Imie pracownika to " + imie);
-        return imie;
+        return "Imie pracownika to " + imie;
     }
 
 }

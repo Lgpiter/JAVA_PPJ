@@ -11,8 +11,6 @@ public class Spawacz
     }
 
     public String wyswietl(){
-        super.wyswietl();
-        System.out.println(" a jego staz pracy to " + stazpracy);
-        return " A jego staz pracy to " + stazpracy;
+        return super.wyswietl() + " A jego staz pracy to " + stazpracy;
     }
 }
