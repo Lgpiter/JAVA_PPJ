@@ -22,4 +22,24 @@ public class Monster {
         this.strength = 1240;
         this.health = 10000;
     }
+
+    public int getHealth() {
+        return health;
+    }
+
+    public void takeDamage(int a){health -= a;}
+
+    public int getPower(){return strength;}
+
+    public boolean isAlive(){
+        if(health > 0)
+            return true;
+        else
+            return false;
+    }
+
+    public void show(){
+        System.out.println("Monster name is " + name + " his strength equals " + strength +
+                " and his actual health level is " + health);
+    }
 }
