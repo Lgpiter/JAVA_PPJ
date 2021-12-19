@@ -49,11 +49,15 @@ public class Monster {
         while(a.isAlive() && b.isAlive()){
             a.takeDamage(b.getPower());
             b.takeDamage(a.getPower());
-            System.out.println("Monster " + a.getName() + " hits " + b.getName() + " for " + a.getPower() + " and now  " + b.getName() + " health equals " + b.getHealth());
+            //System.out.println("Monster " + a.getName() + " hits " + b.getName() + " for " + a.getPower() + " and now  " + b.getName() + " health equals " + b.getHealth());
         }
-        if(!a.isAlive())
+        if(!a.isAlive()) {
+            System.out.println("Fight is won by monster " + b.getName());
             return b;
-        else
+        }
+        else {
+            System.out.println("Fight is won by monster " + a.getName());
             return a;
+        }
     }
 }
