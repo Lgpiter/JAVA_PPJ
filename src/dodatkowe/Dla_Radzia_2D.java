@@ -14,6 +14,10 @@ public class Dla_Radzia_2D {
         System.out.println("=================================");
         wypisz(getColSwapped(tab));
         System.out.println(getSumDiagonal(tab));
+        //Zadanie 4
+        int[] tab1 = {1,2,3,4,5,6,7};
+        int[] tab2 = {4,5,6,5,7,7,8};
+        wypisz_Zadanie4(getSumaAtlndices(tab1,tab2));
     }
 
     public static int getSum(int[][] arr){
@@ -57,6 +61,7 @@ public class Dla_Radzia_2D {
         return suma;
     }
 
+    //Zadanie 4
     public static int[] getSumaAtlndices(int[] arr1, int[] arr2){
         if(arr1.length == arr2.length){
             int[] tab = new int[arr1.length];
@@ -67,6 +72,14 @@ public class Dla_Radzia_2D {
         }
         else
             return null;
+    }
+
+    //Sprawdzenie czy w zadaniu 4 nam dobrze wyszlo
+    public static void wypisz_Zadanie4(int[] arr){
+        for(int i = 0; i < arr.length; i++){
+            System.out.print(arr[i] + " ");
+        }
+        System.out.println();
     }
 
 
