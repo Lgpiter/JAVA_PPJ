@@ -12,4 +12,9 @@ public class DrzewoLisciaste
     public String toString(){
         return super.toString() + ", a jego lisc ma kszalt numer " + ksztaltliscia;
     }
+
+    @Override
+    public void zerwijOwoc() throws DrzewoBezOwocoweException {
+        super.zerwijOwoc();
+    }
 }

@@ -14,4 +14,9 @@ public class DrzewoIglaste
     public String toString(){
         return super.toString() + " na tym drzewie jest " + iloscIgiel + " igiel, a dlugosc szyszki na nim to " + dlugoscSzyszki + " cm";
     }
+
+    @Override
+    public void zerwijOwoc() throws DrzewoBezOwocoweException {
+        super.zerwijOwoc();
+    }
 }

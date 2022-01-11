@@ -11,4 +11,9 @@ public class DrzewoOwocowe
     public String toString(){
         return super.toString() + " a nazwa jego owocu to " + nazwaOwoca;
     }
+
+    @Override
+    public void zerwijOwoc(){
+        System.out.println("Zostal zerwany owoc: " + nazwaOwoca);
+    }
 }

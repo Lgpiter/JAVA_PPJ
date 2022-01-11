@@ -16,4 +16,8 @@ public class Drzewo {
                 " jego wysokosc to metrow " + wysokosc +
                 " a jego przkroj to " + przekrojDrzewa;
     }
+
+    public void zerwijOwoc() throws DrzewoBezOwocoweException{
+        throw new DrzewoBezOwocoweException();
+    }
 }

@@ -36,6 +36,5 @@ public class Main {
                 "\nPomaranczy: " + licznik_pomaranczy
         );
 
-
     }
 }
