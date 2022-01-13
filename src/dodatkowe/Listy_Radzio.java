@@ -34,9 +34,11 @@ public class Listy_Radzio {
             sentence3.add("lubi");
             sentence3.add("ryby");
 
+
             paragraph.add(sentence1);
             paragraph.add(sentence2);
             paragraph.add(sentence3);
+
 
             System.out.println(getParagraphMostOccuredWord(paragraph));
         }
@@ -94,28 +96,34 @@ public class Listy_Radzio {
         return sentence.get(the_most);
     }
 
-    //Zadanie 2
+    //Zadanie2
     public static String getParagraphMostOccuredWord(ArrayList<ArrayList<String>> paragraph){
         int counter = 0;
         int max = 0;
-        int ind_i = 0;
-        int ind_j = 0;
+        int ind_first = 0;
+        int ind_second = 0;
+
+
         for (int i = 0; i < paragraph.size(); i++){
             for (int j = 0; j < paragraph.get(i).size(); j++){
                 counter = 0;
-                for(int k = j + 1; k < paragraph.get(i).size(); k++){
-                    if(paragraph.get(i).get(j).equals(paragraph.get(j).get(k))){
-                        counter++;
+                for(int a = 0; a < paragraph.size(); a++){
+                    for(int b = 0; b < paragraph.get(a).size(); b++){
+                        if(paragraph.get(i).get(j).equals(paragraph.get(a).get(b))){
+                            counter++;
+                        }
                     }
                 }
+
                 if(counter > max){
-                    ind_i = i;
-                    ind_j = j;
+                    max = counter;
+                    ind_first = i;
+                    ind_second = j;
                 }
             }
         }
 
-        return paragraph.get(ind_i).get(ind_j);
+        return paragraph.get(ind_first).get(ind_second);
     }
 
     //Zadanie 3
