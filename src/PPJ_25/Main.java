@@ -1,10 +1,11 @@
 package PPJ_25;
 
 import java.io.*;
+import java.nio.charset.StandardCharsets;
 
 public class Main {
     public static void main(String[] args) {
-        Zadanie2();
+        Zadanie4();
 
         /*
         try {
@@ -36,8 +37,6 @@ public class Main {
         }
 
          */
-
-
     }
 
     public static void Zadanie1(){
@@ -124,6 +123,111 @@ public class Main {
             }
         }
         return suma;
+    }
+
+    public static void Zadanie3(){
+
+        try {
+            String test = "test";
+            for(int i = 1; i < 6; i++) {
+                int counter = 0;
+                FileOutputStream fos = new FileOutputStream("Z:\\\\JAVA_TEST\\\\src\\\\PPJ_25\\\\" + "inputData" + i + ".txt");
+
+                    int[] tab = tworzenie_tablicy();
+                    for(int j = 0; j < tab.length; j++){
+                        System.out.print(tab[j] + " ");
+                        String parsedInt = String.valueOf(tab[j]);
+                        byte[] toSend = parsedInt.getBytes();
+                        fos.write(toSend);
+                        fos.write(' ');
+                    }
+
+                    System.out.println();
+
+                fos.close();
+            }
+        }catch (FileNotFoundException e){
+            e.printStackTrace();
+        }catch (IOException e){
+            e.printStackTrace();
+        }
+    }
+
+    public static int[] tworzenie_tablicy(){
+        int[] tab = new int[5];
+        for(int i = 0; i < tab.length; i++){
+            tab[i] = (int)(Math.random()*1000);
+        }
+
+        for(int i = 0; i < tab.length; i++){
+            for(int j = i + 1; j < tab.length; j++){
+                if(tab[i] >= tab[j]){
+                    int pom = tab[i];
+                    tab[i] = tab[j];
+                    tab[j] = pom;
+                }
+            }
+        }
+        return tab;
+    }
+
+    public static int[] sortowanie_tablicy(int[] tab){
+        for(int i = 0; i < tab.length; i++){
+            for(int j = i + 1; j < tab.length; j++){
+                if(tab[i] > tab[j]){
+                    int pom = tab[i];
+                    tab[i] = tab[j];
+                    tab[j] = pom;
+                }
+            }
+        }
+        return tab;
+    }
+
+    public static void Zadanie4(){
+
+        int[] tab = new int[4];//tablica do trzymania pojedynczej liczby
+        int[] tab_duza = new int[5];//tablica do trzymaniu liczb z x plikow
+        try{
+
+            FileOutputStream fos = new FileOutputStream("Z:\\\\JAVA_TEST\\\\src\\\\PPJ_25\\\\" + "Wynikowy.txt");
+            FileInputStream fis = new FileInputStream("Z:\\\\JAVA_TEST\\\\src\\\\PPJ_25\\\\" + "inputData1.txt");
+            int val1,val2;
+            int pom_mala = 0;
+            int pom_duza = 0;
+
+           // while(ilosc_liczb < 5) {
+
+                for (int i = 1; i < 6; i++) {
+                    //ten fragment
+                    FileInputStream fis2 = new FileInputStream("Z:\\\\JAVA_TEST\\\\src\\\\PPJ_25\\\\" + "inputData" + i + ".txt");
+                    zeruj_tablice(tab);
+
+                    while ((val2 = (char) fis2.read()) != ' ') {
+                        tab[pom_mala++] = val2 - '0';
+                    }
+                    System.out.println("Z pliku " + i + " zczytalismy " + suma(tab));
+                    pom_mala = 0;
+                    tab_duza[pom_duza++] = suma(tab);
+                    //az tutaj elegancko dziala i wszystko smiga, odczytuje wszystkie pierwsze liczby z jednej tablicy i je spisuje do duzej
+                }
+                sortowanie_tablicy(tab_duza);
+
+                for (int i = 0; i < tab_duza.length; i++) {
+                    String parsedInt = String.valueOf(tab_duza[i]);
+                    byte[] toSend = parsedInt.getBytes();
+                    fos.write(toSend);
+                    fos.write(' ');
+                }
+                pom_duza = 0;
+
+           // }
+            fos.close();
+        }catch (FileNotFoundException e){
+            e.printStackTrace();
+        }catch(IOException e){
+            e.printStackTrace();
+        }
     }
 
 
