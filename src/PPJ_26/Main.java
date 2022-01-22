@@ -8,6 +8,7 @@ public class Main {
         Scanner scan = new Scanner(System.in);
 
 
+
         /*
         //Zadanie 3
         MojSkaner skaner = new MojSkaner(System.in);
@@ -29,8 +30,9 @@ public class Main {
         //Zadanie 4
         try {
             InputStream wejscie = new FileInputStream("Z:\\JAVA_TEST\\src\\PPJ_26\\doOdczytu.txt");
-            PNWReader reader = new PNWReader(1, wejscie);
+            PNWReader reader = new PNWReader(4, wejscie);
             reader.show();
+
         }catch (FileNotFoundException e){
             e.printStackTrace();
         }
